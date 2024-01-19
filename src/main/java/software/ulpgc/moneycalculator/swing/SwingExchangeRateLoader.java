@@ -13,6 +13,7 @@ import java.time.LocalDate;
 
 public class SwingExchangeRateLoader implements ExchangeRateLoader {
     private static final String API_KEY = "c6bb5a99a896e39c49cee77f";
+
     @Override
     public ExchangeRate load(Currency from, Currency to) {
         try {
@@ -25,7 +26,8 @@ public class SwingExchangeRateLoader implements ExchangeRateLoader {
     private ExchangeRate getExchangeRate(Currency from, Currency to, String json) {
         JsonObject symbols = JsonParser.parseString(json).getAsJsonObject().get("conversion_rates").getAsJsonObject();
         for (String code : symbols.keySet()) {
-            if(code.equals(to)) return new ExchangeRate(from,to, LocalDate.now(),symbols.get(code).getAsDouble());
+            if(code.equals(to.code()))
+                return new ExchangeRate(from, to, LocalDate.now(), symbols.get(code).getAsDouble());
         }
         return null;
     }
