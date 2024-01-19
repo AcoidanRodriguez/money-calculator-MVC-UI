@@ -5,7 +5,6 @@ import software.ulpgc.moneycalculator.model.Currency;
 import software.ulpgc.moneycalculator.swing.MainFrame;
 import software.ulpgc.moneycalculator.api.APICurrencyLoader;
 import software.ulpgc.moneycalculator.api.APIExchangeRateLoader;
-
 import java.util.List;
 
 public class MainSwing {
