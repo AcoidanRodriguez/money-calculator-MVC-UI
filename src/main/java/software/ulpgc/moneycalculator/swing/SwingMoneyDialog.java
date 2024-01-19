@@ -17,6 +17,7 @@ public class SwingMoneyDialog extends JPanel implements MoneyDialog {
         this.setLayout(new FlowLayout());
         add(new JLabel("Amount:"));
         add(amount = createAmountField());
+        add(new JLabel("From/To"));
     }
 
     private JTextField createAmountField() {
