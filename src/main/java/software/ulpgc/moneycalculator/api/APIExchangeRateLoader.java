@@ -1,4 +1,4 @@
-package software.ulpgc.moneycalculator.swing;
+package software.ulpgc.moneycalculator.api;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -11,6 +11,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.time.LocalDate;
 
+// API: https://www.exchangerate-api.com/
 public class APIExchangeRateLoader implements ExchangeRateLoader {
     private static final String API_KEY = "c6bb5a99a896e39c49cee77f";
 
