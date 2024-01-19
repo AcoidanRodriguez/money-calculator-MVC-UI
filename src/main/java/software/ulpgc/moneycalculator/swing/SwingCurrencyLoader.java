@@ -16,16 +16,15 @@ public class SwingCurrencyLoader implements CurrencyLoader {
     @Override
     public List<Currency> load() {
         try {
-            return CurrenciesToList(loadJson());
+            return currenciesToList(loadJson());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-    private List<Currency> CurrenciesToList(String json) {
+    private List<Currency> currenciesToList(String json) {
         List<Currency> list = new ArrayList<>();
         JsonObject symbols = JsonParser.parseString(json).getAsJsonObject().get("conversion_rates").getAsJsonObject();
         for (String code : symbols.keySet()) {
-            System.out.println(code);
             list.add(new Currency(code));
         }
         return list;
