@@ -1,8 +1,8 @@
 package software.ulpgc.moneycalculator.model;
 
-public record Currency(String code, String name) {
+public record Currency(String code) {
     @Override
     public String toString() {
-        return code + "-" + name;
+        return code;
     }
 }
