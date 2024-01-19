@@ -1,19 +1,19 @@
 package software.ulpgc.moneycalculator;
 
 import software.ulpgc.moneycalculator.control.ExchangeCommand;
-import software.ulpgc.moneycalculator.mock.MockCurrencyLoader;
-import software.ulpgc.moneycalculator.mock.MockExchangeRateLoader;
 import software.ulpgc.moneycalculator.model.Currency;
 import software.ulpgc.moneycalculator.swing.MainFrame;
+import software.ulpgc.moneycalculator.api.APICurrencyLoader;
+import software.ulpgc.moneycalculator.api.APIExchangeRateLoader;
 
 import java.util.List;
 
 public class MainSwing {
     public static void main(String[] args) {
         MainFrame frame = new MainFrame();
-        MockCurrencyLoader currencyLoader = new MockCurrencyLoader();
+        CurrencyLoader currencyLoader = new APICurrencyLoader();
         List<Currency> currencies = currencyLoader.load();
-        ExchangeRateLoader exchangeRateLoader = new MockExchangeRateLoader();
+        ExchangeRateLoader exchangeRateLoader = new APIExchangeRateLoader();
         MoneyDialog moneyDialog = frame.getMoneyDialog().define(currencies);
         CurrencyDialog currencyDialog = frame.getCurrencyDialog().define(currencies);
         MoneyDisplay moneyDisplay = frame.getMoneyDisplay();
