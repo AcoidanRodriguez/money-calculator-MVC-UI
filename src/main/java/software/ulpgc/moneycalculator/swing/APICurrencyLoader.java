@@ -11,7 +11,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SwingCurrencyLoader implements CurrencyLoader {
+public class APICurrencyLoader implements CurrencyLoader {
     private static final String API_KEY = "c6bb5a99a896e39c49cee77f";
     @Override
     public List<Currency> load() {
