@@ -11,7 +11,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.time.LocalDate;
 
-public class SwingExchangeRateLoader implements ExchangeRateLoader {
+public class APIExchangeRateLoader implements ExchangeRateLoader {
     private static final String API_KEY = "c6bb5a99a896e39c49cee77f";
 
     @Override
