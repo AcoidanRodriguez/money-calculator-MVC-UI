@@ -33,7 +33,7 @@ public class APIExchangeRateLoader implements ExchangeRateLoader {
     }
 
     private String loadJson(Currency from) throws IOException {
-        URL url = new URL("https://v6.exchangerate-api.com/v6/" + API_KEY + "/latest/" + from.code());
+        URL url = new URL("https://v6.exchangerate-api.com/v6/" + API_KEY +"/latest/" + from.code());
         try(InputStream is = url.openStream()){
             return new String(is.readAllBytes());
         }
